@@ -1,0 +1,1139 @@
+<!doctype html>  
+<html lang="en">
+  
+  <head>
+    <meta charset="utf-8">
+    
+    <title>Slideshow</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    
+    <link rel="stylesheet" href="reveal.js/css/reset.css">
+    <link rel="stylesheet" href="reveal.js/css/main.css">
+    <link rel="stylesheet" href="reveal.js/css/print.css" type="text/css" media="print">
+
+    <link rel="stylesheet" href="reveal.js/lib/css/github.css">
+    
+    <style type="text/css">
+      #terminal {
+        text-align: left;
+        font-size: 30px;
+        line-height: 30px;
+        border-color: #230;
+        border-style: solid;
+        border-width: 3px;
+        border-radius: 16px;
+        padding: 5px;
+      }
+    </style>
+
+    <link rel="stylesheet" href="slideshow.css">
+  </head>
+  
+  <body>
+    
+    <div class="reveal">
+
+      <!-- Used to fade in a background when a specific slide state is reached -->
+      <div class="state-background"></div>
+      
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <!-- empty slide -->
+        <section></section>
+
+        <!-- hello -->
+        <section data-trigger="animTerm">
+          <h1>Welcome to </h1>
+          <h3 class="inverted"><em>How to Cook with <code>jQuery</code>, <code>Backbone</code> and <code>Socket.io</code></em></h3>
+
+          <div id="terminal">
+          </div>
+          <script type="text/javascript">
+            function animTerm() {
+              $('#terminal').typist({
+                width: 500,
+                height: 300
+              })
+              .typist('prompt')
+              .typist('speed', 'slow')
+              .typist('type', 'sayhello')
+              .typist('speed', 'fast')
+              .typist('echo', 'Hello everyone!')
+              .typist('prompt')
+              .typist('speed', 'slow')
+              .typist('type', 'startslideshow')
+              .typist('speed', 'fast')
+              .typist('echo', 'Duh! It has already started!');
+            }
+          </script>
+        </section>
+
+        <!-- who are we -->
+        <section>
+          <h2>Who are we?</h2>
+          <div class="igor fragment">
+            <span class="name">Igor Soarez</span>
+            <img class="avatar" src="http://www.gravatar.com/avatar/c29ecd0460bf9361001f47bbb8455b9a.png?size=200"/>
+          </div>
+
+          <div class="joao fragment">
+            <span class="name">João Duarte</span>
+            <img  class="avatar" src="http://www.gravatar.com/avatar/ad74908bd6c148a8fc657cf6df0fc30b.png?size=200"/>
+          </div>
+          <pre class="fragment"><code contenteditable style="font-size: 18px; margin-top: 20px;">console.log(':)');</code></pre>
+        </section>
+
+        <!-- who are you -->
+        <section>
+          <h1>Who are you?</h1>
+
+        </section>
+
+        <!-- Backbone.JS intro -->
+        <section>
+          <section>
+            <h1>Backbone.JS</h1>
+            <h2>What are you talking about?</h2>
+          </section>
+          <section>
+            <h3>What is it?<h3>
+            <ul>
+              <li class="fragment">It's a MVC library!</li>
+              <li class="fragment">It's a MVP library!</li>
+              <li class="fragment">It's a trap!</li>
+              <li class="fragment"><strong>It's a MV* library</strong></li>
+            </ul>
+          </section>
+          <section>
+            <h3>What does it have?<h3>
+            <ul>
+              <li class="fragment">Models</li>
+              <li class="fragment">Views</li>
+              <li class="fragment">Collections</li>
+              <li class="fragment">Routers</li>
+            </ul>
+            <div class="fragment" style="margin-top: 100px;">
+              <div style="font-size: 130px;">
+                <span style="margin-right: 100px;">M</span><span style="margin-right: 100px;">V</span><span>C</span>
+              </div>
+              <div style="font-size: 30px; margin-top: 25px;">
+                <span style="position: absolute; left: 272px;">Models</span>
+                <span style="position: absolute; left: 431px;">Views</span>
+                <span style="position: absolute; left: 582px;">
+                  <ul style="list-style-type: none;">
+                    <li>Views</li>
+                    <li>Routers</li>
+                  </ul>
+                </span>
+              </div>
+            </div>
+          </section>
+          <section>
+            <h3>Workflow</h3>
+            <img src="img/data_wf.png" alt="Data workflow in a Backbone.JS application">
+            <p>From "The anatomy of Backbone JS" course slides, on <a href="http://www.codeschool.com">codeschool</a></p>
+          </section>
+          <section>
+            <h3>Fast facts</h3>
+            <ul>
+              <li>Provides client-side app structure</li>
+              <li>Models to represent data</li>
+              <li>Views to hook up models to the DOM</li>
+              <li>Routers provide client-side navigation, great for single page apps</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Fast facts #2</h3>
+            <ul>
+              <li>Good documentation</li>
+              <li>Used by large companies such as SoundCloud, LinkedIn and Foursquare to build non-trivial applications</li>
+              <li>Event-driven communication between views and models</li>
+              <li>Great support for RESTful interfaces out of the box, so models can be easily tied to a backend</li>
+            </ul>
+            <blockquote style="margin-top: 30px;">
+              Get your truth out of the DOM - Jeremy Ashkenas
+            </blockquote>
+          </section>
+        </section>
+
+
+        <!-- zombie dice! -->
+        <section>
+          <section>
+            <h1>Zombie Dice</h1>
+            <h3>Board game</h3>
+            <img src="img/zombie-dice3.jpg" />
+            <br />
+          </section>
+          <section>
+            <h1>The dice</h1>
+            <strong><em>Each die represents a human survivor</em></strong>
+            <br />
+            <div style="position: relative; text-align: left;">
+              <ul style="width: 500px">
+                <li><strong>Brain</strong> - the survivor’s brain was caught.</li>
+                <li><strong>Shoot</strong> - the survivor shoot the zombie in the face and his brain cannot be caught.</li>
+                <li><strong>Runner</strong> - the survivor ran, but can still be chased if the Zombie chooses so.</li>
+              </ul>
+              <img src="img/faceTypes.jpg" style="width: 350px; position: absolute; bottom: 0px; right: 0px;" />
+            </div>
+          </section>
+          <section>
+            <h1>Dice quantities</h1>
+            <p style="font-size: 40px;">There are:</p>
+            <ul style="font-size: 60px; line-height: 70px;">
+              <li>6 <span style="border-radius: 15px; color: #4F4; background-color: #040">green dice</span></li>
+              <li>4 <span style="border-radius: 15px; color: #FF4; background-color: #770">yellow dice</span></li>
+              <li>3 <span style="border-radius: 15px; color: #F88; background-color: #800">red dice</span></li>
+            </ul>
+          </section>
+          <section>
+            <h1>Dice odds</h1>
+            <p style="font-size: 40px;">The chances of getting shot are different according to the color of the dice:</p>
+            <ul style="font-size: 50px; line-height: 70px;">
+              <li><span style="border-radius: 15px; color: #4F4; background-color: #040">Green</span> has 2 runners, 3 brains, 1 shot.</li>
+              <li><span style="border-radius: 15px; color: #FF4; background-color: #770">Yellow</span> has 2 runners, 2 brains, 2 shots.</li>
+              <li><span style="border-radius: 15px; color: #F88; background-color: #800">Red</span> has 2 runners, 1 brain, 3 shots.</li>              
+            </ul>
+          </section>
+          <section>
+            <h1>The goal</h1>
+            <img src="img/brains.jpg" />
+            <br /><strong>Accumulate brains!</strong>
+          </section>
+          <section>
+            <h1>The game</h1>
+            <div style="position: relative; text-align: left;">
+              <ul style="width: 500px">
+                <li>Start with all dices in the cup</li>
+                <li>Draw and roll 3</li>
+                <li>Keep the shots and brains</li>
+                <li>Choose whether or not to push your luck</li>
+                <li>If you stop you score the brains but not the shots</li>
+                <li>3 shots means you die and lose the brains</li>
+
+              </ul>
+              <img src="img/ZombieDice.jpg" style="width: 350px; position: absolute; bottom: 0px; right: 0px;" />
+            </div>
+          </section>
+          <section>
+            <h1>Let's make<br/>(and play)<br/>Zombie Dice!</h1>  
+          </section>
+        </section>
+
+        <!-- Models -->
+        <section>
+          <section>
+           <h1>Part0</h1>
+           <h2>Models and Collections</h2>
+           <h4>Because organizing your data is a no brainer</h4> 
+          </section>
+          <section>
+            <h4>Creating a model class</h4>
+            <pre><code contenteditable class="javascript">
+  var Zombie = Backbone.Model.extend({});
+              </code></pre>
+            <br />
+            <h4>Creating an instance of the Zombie model</h4>
+            <pre><code contenteditable class="javascript">
+  var deadZombie = new Zombie({
+    name: 'John Doe',
+    causeOfDeath: 'shotgun'
+  });
+              </code></pre>
+          </section>
+          <section>
+            <h4>Setting default values</h4>
+            <pre><code contenteditable class="javascript">
+  var Zombie = Backbone.Model.extend({
+    defaults: {
+      causeOfDeath: 'shotgun'
+    }
+  });
+              </code></pre>
+<br/>
+            <h4>Get or set model properties</h4>
+            <pre><code contenteditable class="javascript">
+  deadZombie.get('name');
+  deadZombie.set({causeOfDeath: 'banana peel'});
+              </code></pre>
+            <p>Accessing <code>Model.attributes</code> is not recomended. Instead, if you need to manipulate the model data, use <code>Model.toJSON()</code></p>
+          </section>
+          <section>
+            <h4>Model validation</h4>
+            <pre><code contenteditable class="javascript">
+  var Zombie = Backbone.Model.extend({
+    defaults: {
+      isHuman: false
+    }
+
+    validate: function(attributes){
+      if(attributes.isHuman === true){
+        return "Hey, once Zombie, forever Zombie!";
+      }
+      // if everything is OK, return nothing
+    }
+  });
+
+  var deadZombie = new Zombie();
+  // validate is called by Backbone before set
+  deadZombie.set({isHuman: true}); // false
+  deadZombie.get('isHuman'); // false
+              </code></pre>
+          </section>
+          <section>
+            <h4>Model initialization</h4>
+            <pre><code contenteditable class="javascript">
+  var Zombie = Backbone.Model.extend({
+    initialize: function(){
+      console.log('I\'m so initialized!');
+      this.on('change', this.changed, this);
+    },
+
+    changed: function(){
+      console.log('Something changed in my attributes');
+    }
+  });
+              </code></pre>
+          </section>
+          <section>
+            <h4>Special events</h4>
+            <pre><code contenteditable class="javascript">
+  model.on(&lt;event&gt;, &lt;method&gt;, &lt;context&gt;);
+              </code></pre>
+            <table>
+              <tbody>
+                <tr>
+                  <td>change</td>
+                  <td>When an attribute is modified</td>
+                </tr>
+                <tr>
+                  <td>change:&lt;attr&gt;</td>
+                  <td>When &lt;attr&gt; is modified</td>
+                </tr>
+                <tr>
+                  <td>destroy</td>
+                  <td>When a model is destroyed</td>
+                </tr>
+                <tr>
+                  <td>sync</td>
+                  <td>When successfully synced</td>
+                </tr>
+                <tr>
+                  <td>error</td>
+                  <td>When model save or validation fails</td>
+                </tr>
+                <tr>
+                  <td>all</td>
+                  <td>Any triggered event</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+          <section>
+            <h4>Custom events</h4>
+            <pre><code contenteditable class="javascript">
+  var Zombie = Backbone.Model.extend({
+    initialize: function(){
+      this.on('lostLimb', this.somethingPopped, this);
+    },
+
+    somethingPopped: function(){
+      console.log('I feel lighter');
+    },
+
+    randomBadThing: function(){
+      this.trigger('lostLimb');
+    }
+  });
+              </code></pre>
+          </section>
+          <section>
+            <h1>Collections</h1>
+            <h3>Why have brain when you can have brains?</h3>
+          </section>
+          <section>
+            <h3>Collections are sets of Models</h3>
+            <pre class="fragment"><code contenteditable class="javascript">
+  var zombie_rob = new Zombie({});
+  var zombie_buffy = new Zombie({});
+
+  var zombieGang = [zombie_rob, zombie_buffy];
+              </code></pre>
+            <pre class="fragment"><code contenteditable class="javascript">
+  var Zombies = Backbone.Collection.extend({
+    model: Zombie
+  });
+
+  var zombieGang = new Zombies(zombieGang);
+              </code></pre>
+          </section>
+          <section>
+            <h3>A gang of Zombies? There's this TV show...</h3>
+            <pre><code contenteditable class="javascript">
+  zombieGang.length // 2
+  zombieGang.add(zombie_rick) // add a model instance
+  zombieGang.at(0) // Zombie at index 0
+  zombieGang.get(1) // Zombie with ID = 1
+  zombieGang.remove(zombie_rick) // Bye Rick
+
+  //Bulk population
+  var zombies = [
+    {name: 'Buffy', causeOfDeath: 'vampire'},
+    {name: 'Rob', causeOfDeath: 'shotgun'},
+    {name: 'Rick', causeOfDeath: 'brain related disease'}
+  ];
+
+  zombieGang.reset(zombies); // new Zombie(&lt;array_position&gt;);
+                             // for each array position
+              </code></pre>
+          </section>
+          <section>
+            <h3>Many models, many events?</h3>
+            <pre><code contenteditable class="javascript">
+  zombieGang.on(&lt;event&gt;, &lt;function&gt;, &lt;context&gt;);
+              </code></pre>
+              <p style="font-size: 30px">Built-in events</p>
+              <table style="width: 700px; margin: auto">
+                <tbody>
+                  <tr>
+                    <td>add</td>
+                    <td>When a model is added</td>
+                  </tr>
+                  <tr>
+                    <td>remove</td>
+                    <td>When a model is removed</td>
+                  </tr>
+                  <tr>
+                    <td>reset</td>
+                    <td>When reset is called</td>
+                  </tr>
+                </tbody>
+              </table>
+              <span class="fragment" style="font-size: 26px;">When an event is fired on a model...</span>
+              <span class="fragment" style="font-size: 26px;">You have to hire him back.</span>
+              <img class="fragment" width="150" src="img/zombie_troll.png" alt="U mad zombie bro?" />
+              <h4 class="fragment">When and event is fired on a model, it is fired on the collection</h4>
+          </section>
+          <section>
+            <h3>What else?</h3>
+            <table>
+              <tbody>
+                <tr>
+                  <td>forEach</td>
+                  <td>reduce</td>
+                  <td>reduceRight</td>
+                  <td>find</td>
+                </tr>
+                <tr>
+                  <td>filter</td>
+                  <td>reject</td>
+                  <td>every</td>
+                  <td>all</td>
+                </tr>
+                <tr>
+                  <td>some</td>
+                  <td>include</td>
+                  <td>invoke</td>
+                  <td>max</td>
+                </tr>
+                <tr>
+                  <td>min</td>
+                  <td>sortBy</td>
+                  <td>groupBy</td>
+                  <td>sortedIndex</td>
+                </tr>
+                <tr>
+                  <td>shuffle</td>
+                  <td>toArray</td>
+                  <td>size</td>
+                  <td>first</td>
+                </tr>
+                <tr>
+                  <td>initial</td>
+                  <td>rest</td>
+                  <td>last</td>
+                  <td>without</td>
+                </tr>
+                <tr>
+                  <td>indexOf</td>
+                  <td>lastIndexOf</td>
+                  <td>isEmpty</td>
+                  <td>chain</td>
+                </tr>
+              </tbody>
+            </table>
+            <a href="http://documentcloud.github.com/backbone/#Collection-Underscore-Methods">
+              http://documentcloud.github.com/backbone/#Collection-Underscore-Methods
+            </a>
+          </section>
+          <section>
+            <h1>Part0_action</h1>
+          </section>
+          <section>
+            <h2>There's an API!</h2>
+            <h3><a href="http://zd.r42.in">http://zd.r42.in</a>
+              <h2>What does it do?</h2>
+          </section>
+          <section>
+            <h3>Get /games/:id</h3>
+            <pre><code contenteditable class="javascript" style="font-size: 14px;">
+  //response
+  {
+    "id": "PbDHs",
+    "nickname": "Rulio",
+
+    "vp": 0,
+    "score": 0,
+    "rounds": 0,
+    "rolled": [
+      { "color": "red", "face": "shot" },
+      { "color": "green", "face": "runner" },
+      { "color": "yellow", "face": "brain" }
+    ],
+    "brains": ["yellow", "green", "yellow"],
+    "shots": ["red", "yellow"],
+    "runners": ["green"]
+  }
+              </code></pre>
+          </section>
+          <section>
+            <h3>POST /games</h3>
+            <pre><code contenteditable class="javascript" style="font-size: 14px;">
+  // request
+  {
+    "nickname": "Rulio"
+  }
+
+  //response
+  {
+    "id": "PbDHs",
+    "nickname": "Rulio",
+    "score": 0,
+    "vp": 0,
+    "rounds": 0,
+    "rolled": [
+      { "color": "red", "face": "shot" },
+      { "color": "green", "face": "runner" },
+      { "color": "yellow", "face": "brain" }
+    ],
+    "brains": ["yellow"],
+    "shots": ["red"],
+    "runners": ["green"]
+  }
+              </code></pre>
+          </section>
+          <section>
+            <h3>PUT /games/:id</h3>
+            <pre><code contenteditable class="javascript" style="font-size: 14px;">
+  // request
+  {
+    "id": "PbDHs",
+    "nickname": "Rulio",
+    "action": "roll", // roll or stop
+  }
+
+  //response
+  {
+    "id": "PbDHs",
+    "nickname": "Rulio",
+    "score": 0,
+    "vp": 0,
+    "rounds": 0,
+    "rolled": [
+      { "color": "red", "face": "shot" },
+      { "color": "green", "face": "runner" },
+      { "color": "yellow", "face": "brain" }
+    ],
+    "brains": ["yellow"],
+    "shots": ["red"],
+    "runners": ["green"]
+  }
+              </code></pre>
+          </section>
+          <section>
+            <h3>Get /ranking</h3>
+            <pre><code contenteditable class="javascript" style="font-size: 14px;">
+  //response
+  [
+    { 
+      "position": 1,
+      "nickname": "Rulio",
+      "vp": 23,
+      "rounds": 35
+    },
+    { 
+      "position": 2,
+      "nickname": "Emilio",
+      "vp": 23,
+      "rounds": 40
+    },
+    { 
+      "position": 3,
+      "nickname": "Emilio",
+      "vp": 4,
+      "rounds": 8
+    },
+  ]
+              </code></pre>
+          </section>
+          <section>
+            <h2>We can think of some models</h2>
+            <h3>Let's implement them?</h3>
+            <br/>
+            <h3>https://github.com/R42/zd-server/wiki/API</h3>
+          </section>
+        </section>
+
+        <!-- Models sync with the server -->
+        <section>
+          <section>
+            <h1>Part1</h1>
+            <h2>Models - Sync</h2>
+            <p>Let's eat real brainz!</h4>
+          </section>
+          <section>
+            <h3>Let's send this Zombie to... the API</h3>
+            <pre><code contenteditable class="javascript" style="font-size: 14px;">
+  var Zombie = Backbone.Model.extend({
+    urlRoot : 'http://my.api.com/zombies'
+  });
+
+  var synchedZombie = new Zombie({
+    name: 'Jon Doe',
+    causeOfDeath: 'shotgun'
+  });
+
+  synchedZombie.save();
+  //It's a new Zombie (he doesn't have an ID yet)
+  //request: POST to http://my.api.com/zombies
+  //response: A fresh smelly Zombie with his own ID
+              </code></pre>
+          </section>
+          <section>
+            <h3>Give him a much painfull death</h3>
+            <pre><code contenteditable class="javascript" style="font-size: 14px;">
+  synchedZombie.set({causeOfDeath: 'shotgun in the face'});
+
+  synchedZombie.save();
+  //Our Zombie has an ID, we only changed the attributes
+  //request: PUT to http://my.api.com/zombies/:id
+  //response: Our Zombie. Dead. With an ugly face.
+              </code></pre>
+            <h3>Call your Zombie for dinner</h3>
+            <pre><code contenteditable class="javascript" style="font-size: 14px;">
+  synchedZombie.fetch();
+  //Our Zombie has an ID
+  //request: GET to http://my.api.com/zombies/:id
+  //response: Our Zombie.
+              </code></pre>
+          </section>
+          <section>
+            <h3>Zombie, you smell bad, go away</h3>
+            <pre><code contenteditable class="javascript" style="font-size: 14px;">
+  synchedZombie.destroy();
+  //Our Zombie has an ID
+  //request: DELETE to http://my.api.com/zombies/:id
+  //response: Our Zombie is...destroyed
+              </code></pre>
+          </section>
+          <section>
+            <h3>Zombies don't talk...</h3>
+            <pre><code contenteditable class="javascript" style="font-size: 14px;">
+  var Zombie = Backbone.Model.extend({
+    urlRoot : 'http://my.api.com/zombies'
+
+    initialize: function(){
+      this.on('sync', this.sync, this);
+    },
+
+    sync: function(){ console.log('Yay, got synched!'); }
+  });
+
+  var synchedZombie = new Zombie({});
+  synchedZombie.on('destroy', function(){ console.log('destroyed'); });
+              </code></pre>
+          </section>
+          <section>
+            <h2>What kind of sorcery is this?</h2>
+            <h1 class="fragment" style="margin-top: 140px;">
+              <a href="http://backbonejs.org/docs/backbone.html#section-162">
+                <span data-title="Backbone.Sync">Backbone.Sync</span>
+              </a>
+            </h1>
+          </section>
+          <section>
+            <h1>Part1_action</h1>
+            <h2>http://zd.r42.in</h2>
+            <h3>Sync that!</h3>
+          </section>
+        </section>
+
+        <!-- Views -->
+        <section>
+          <section>
+            <h1>Part2</h1>
+            <h2>Views</h2>
+            <h4>Show me the brainz baby Zombie</h4>
+          </section>
+          <section>
+            <h3>What does a view looks like?</h3>
+            <pre><code contenteditable class="javascript" style="font-size: 14px;">
+  var ZombieView = Backbone.View.extend({});
+
+  var simpleZombie = new ZombieView();
+  console.log(simpleZombie.el) // --> &lt;div&gt;&lt;/div&gt;
+              </code></pre>
+            <pre><code contenteditable class="javascript" style="font-size: 14px;">
+  var ZombieView = Backbone.View.extend({
+    tagName: 'li'
+  });
+
+  var simpleZombie = new ZombieView();
+  console.log(simpleZombie.el) // --> &lt;li&gt;&lt;/li&gt;
+              </code></pre>
+          </section>
+          <section>
+            <h3>You can change the whole thing</h3>
+            <pre><code contenteditable class="javascript" style="font-size: 14px;">
+  var ZombieView = Backbone.View.extend({
+    tagName: 'li',
+    className: 'ugly',
+    id: 'zombie'
+  });
+
+  var simpleZombie = new ZombieView();
+  console.log(simpleZombie.el) // --> &lt;li id="zombie" class="ugly"&gt;&lt;/li&gt;
+
+  //You can also get the el as a jQuery element
+  $(simpleZombie.el) // Nah...
+  simpleZombie.$el // :-)
+              </code></pre>
+          </section>
+          <section>
+            <h3>The special player</h3>
+            <pre><code contenteditable class="javascript" style="font-size: 14px;">
+  var ZombieView = Backbone.View.extend({
+    render: function(){
+      var name = this.model.get('name');
+      var cod = this.model.get('causeOfDeath');
+      var html = '&lt;h1&gt;Zombie ' + name + ' has died of ' + cod + '&lt;/h1&gt;';
+      this.$el.html(html);
+      return this;
+    }
+  });
+
+  var simpleZombie = new ZombieView({ model: zombie });
+  simpleZombie.render();
+  console.log(simpleZombie.el);
+
+  // &lt;div&gt;
+  //   &lt;h1&gt;Buffy has died of vampire&lt;/h1&gt; 
+  // &lt;/div&gt;
+              </code></pre>
+          </section>
+          <section>
+            <h3>Templates to the recue</h3>
+            <pre><code contenteditable class="javascript" style="font-size: 14px;">
+  var ZombieView = Backbone.View.extend({
+    template: _.template('&lt;h1&gt;Zombie {{name}} has died of {{causeOfDeath}}&lt;/h1&gt;');
+
+    render: function(){
+      var attributes = this.model.toJSON();
+      var html = this.template(attributes);
+      this.$el.html(html);
+      return this;
+    }
+  });
+
+  var simpleZombie = new ZombieView({ model: zombie });
+  simpleZombie.render();
+  console.log(simpleZombie.el);
+
+  // &lt;div&gt;
+  //   &lt;h1&gt;Buffy has died of vampire&lt;/h1&gt; 
+  // &lt;/div&gt;
+              </code></pre>
+          </section>
+          <section>
+            <h3>But I want to know when things happen</h3>
+            <pre><code contenteditable class="javascript" style="font-size: 14px;">
+  var ZombieView = Backbone.View.extend({
+    events: {
+      'click h3': 'gotClicked'
+      '&lt;event&gt; &lt;selector&gt;': '&lt;handler&gt;'
+    },
+    ...
+  });
+              </code></pre>
+            <p style="text-align: left;">Events</p>
+            <table>
+              <tbody>
+                <tr>
+                  <td>change</td>
+                  <td>click</td>
+                  <td>dblclick</td>
+                  <td>focus</td>
+                  <td>focusin</td>
+                </tr>
+                <tr>
+                  <td>focusout</td>
+                  <td>hover</td>
+                  <td>keydown</td>
+                  <td>keypress</td>
+                  <td>load</td>
+                </tr>
+                <tr>
+                  <td>mousedown</td>
+                  <td>mouseenter</td>
+                  <td>mouseleave</td>
+                  <td>mousemove</td>
+                  <td>mouseout</td>
+                </tr>
+                <tr>
+                  <td>mouseover</td>
+                  <td>mouseup</td>
+                  <td>ready</td>
+                  <td>resize</td>
+                  <td>scroll</td>
+                </tr>
+                <tr>
+                  <td>select</td>
+                  <td>unload</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+          <section>
+            <h3>So I have to render all the time?</h3>
+            <h4 class="fragment">No</h4>
+            <pre class="fragment">
+              <code contenteditable class="javascript" style="font-size: 14px;">
+  var ZombieView = Backbone.View.extend({
+    initialize: function(){
+      this.model.on('change', this.render, this);
+    },
+    ...
+  });
+              </code></pre>
+          </section>
+          <section>
+            <img src="img/mvc_events_wf.png" alt="The events workflow in Backbone.JS">
+            <p>From "The anatomy of Backbone JS" course slides, on <a href="http://www.codeschool.com">codeschool</a></p>
+          </section>
+          <section>
+            <h3>Collections + Views = Collection Views</h3>
+            <img src="img/collectionview.png" alt="Collection View" />
+            <p>From "The anatomy of Backbone JS" course slides, on <a href="http://www.codeschool.com">codeschool</a></p>
+            <h4>A collection view doesn't render any HTML. It delegates that to the model views</h4>
+          </section>
+          <section>
+            <h3>How to use them?</h3>
+            <pre><code contenteditable class="javascript" style="font-size: 14px;">
+  var ZombiesView = Backbone.View.extend({ 
+    collection: zombies,
+
+    initialize: function(){
+      this.collection.on('add', this.addOne, this);
+      this.collection.on('reset', this.addAll, this);
+    },
+
+    addAll: function(){
+      this.collection.forEach(this.addOne, this);
+    },
+
+    addOne: function(zombie){
+      var zombieView = new ZombieView({ model: zombie });
+      this.$el.append(zombieView.render().el);
+    },
+
+    render: function(){
+      this.collection.forEach(this.addOne, this);
+      return this;
+    }    
+  });
+              </code></pre>
+          </section>
+          <section>
+            <h1>Part2_action</h1>
+            <h2>Do the pretty thing!</h2>
+          </section>
+        </section>
+
+        <!-- Routers -->
+        <section>
+          <section>
+            <h1>Part3</h1>
+            <h2>Routers</h2>
+            <h4>How to navigate through the Zombies</h4>
+          </section>
+          <section>
+            <h3>But mister, I know everything about navigation!</h3>
+            <pre><code contenteditable class="javascript" style="font-size: 14px;">
+  &lt;a href="#" class="pretty_icon"&gt;&lt;/a&gt;
+
+  $('a.pretty_icon').click(function(e){
+    e.preventDefault();
+    ...
+  });
+              </code></pre>
+          </section>
+          <section>
+            <h3>They see me Routin', they Hatin'</h3>
+            <pre><code contenteditable class="javascript" style="font-size: 14px;">var ZombieRouter = Backbone.Router.extend({
+    routes: {
+      'whatsfordinner': 'humans',
+      'iwanttoeat/:food': 'specialRequest'
+    },
+
+    humans: function(){
+      // when URL has #whatsfordinner
+      ...
+    },
+
+    specialRequest: function(food){
+      // when URL has #iwanttoeat/:food
+
+      // if the URL is #iwanttoeat/brains
+      // the food parameter will have the string 'brains'
+    }
+  });
+
+Backbone.history.start();</code></pre>
+          </section>
+          <section>
+            <h3>Route matches</h3>
+            <table>
+              <tbody>
+                <tr>
+                  <th>matcher</th>
+                  <th>URL</th>
+                  <th>params</th>
+                </tr>
+                <tr>
+                  <td>search/:query</td>
+                  <td>search/ruby</td>
+                  <td>query = ‘ruby’</td>
+                </tr>
+                <tr>
+                  <td>search/:query/p:page</td>
+                  <td>search/ruby/p2</td>
+                  <td>query = ‘ruby’, page = 2</td>
+                </tr>
+                <tr>
+                  <td>folder/:name-:mode</td>
+                  <td>folder/foo-r</td>
+                  <td>name = ‘foo’, mode = ‘r’</td>
+                </tr>
+                <tr>
+                  <td>file/*path</td>
+                  <td>file/hello/world.txt</td>
+                  <td>path = ‘hello/world.txt’</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+          <section>
+            <h3>Links are the way to go?</h3>
+            <pre><code contenteditable class="javascript" style="font-size: 14px;">
+  &lt;a href="#iwanttoeat/brains" class="pretty_icon"&gt;&lt;/a&gt;
+              </code></pre>
+            <h3>Not only</h3>
+            <pre><code contenteditable class="javascript" style="font-size: 14px;">
+  router.navigate('iwanttoeat/brains', {
+    trigger: true
+  });
+              </code></pre>
+          </section>
+          <section>
+            <h1>Part3_action</h1>
+            <h2>Find your way</h2>
+          </section>
+        </section>
+
+        <!-- Socket.IO -->
+        <section>
+          <section>
+            <h1>Part4</h1>
+            <h2>Socket.IO</h2>
+            <h4>A zombie must be notified</h4>
+          </section>
+          <section>
+            <h3>The problem: Low latency Server notifications</h3>
+            <div class="fragment">
+              <h3>Solutions</h3>
+              <ul>
+                <li class="fragment">Polling
+                  <ul>
+                    <li class="fragment">Auto refreshing</li>
+                    <li class="fragment">AJAX polling</li>
+                  </ul>
+                </li>
+                <li class="fragment">
+                  Streaming
+                  <ul>
+                    <li class="fragment">Comet</li>
+                    <li class="fragment">Forever iframe</li>
+                    <li class="fragment">AJAX multipart streaming</li>
+                    <li class="fragment">Adobe® Flash® Socket</li>
+                    <li class="fragment" style="color: green; font-weight: bold; text-decoration: underline;">WebSockets</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </section>
+          <section>
+            <h2>On WebSockets</h2>
+            <ul>
+              <li>Standardized protocol by IETF - RFC 6455</li>
+              <li>Standardized API by W3C
+                <ul>
+                  <li>Defined in the Communications section of the HTML5 specification</li>
+                </ul>
+              </li>
+              <li>Permanent connection</li>
+              <li>Bi-directional, full-duplex</li>
+              <li>Over HTTP
+                <ul>
+                  <li>interpreted by HTTP servers as an Upgrade request</li>
+                </ul>
+              </li>
+              <li>Message oriented</li>
+            </ul>
+          </section>
+          <section>
+            <h1>Enter <span style="font-weight: bold; text-shadow: 0px 0px 10px #266D92; color: #123F55">Socket.IO</span>!</h1>
+            <p style="font-size: 40px">A JavaScript library that aims to:</p>
+            <blockquote style="font-size: 50px; line-height: 60px" cite="http://socket.io/">
+              make realtime apps possible in every browser and mobile device, blurring the differences between the different transport mechanisms. 
+            </blockquote>
+          </section>
+          <section>
+            <h2>On Socket.IO</h2>
+            <ul>
+              <li class="fragment">JavaScript library for realtime web applications</li>
+              <li class="fragment">Has two parts:
+                <ul>
+                  <li class="fragment">a client-side library for the browser</li>
+                  <li class="fragment">a server-side library for node.js
+                    <ul class="fragment">
+                      <li style="font-size: 20px; line-height: 20px;">other implementations include:
+                        <ul style="list-style-type: none;">
+                          <li style="display: inline; margin-right: 5px;">Ruby</li>
+                          <li style="display: inline; margin-right: 5px;">Python</li>
+                          <li style="display: inline; margin-right: 5px;">Java</li>
+                          <li style="display: inline; margin-right: 5px;">Perl</li>
+                          <li style="display: inline; margin-right: 5px;">Lua</li>
+                          <li style="display: inline; margin-right: 5px;">Erlang</li>
+                          <li style="display: inline; margin-right: 5px;">C++</li>
+                          <li style="display: inline; margin-right: 5px;">Objective-C</li>
+                          <li style="display: inline; margin-right: 5px;">Go.</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li class="fragment" style="text-decoration: underline; font-weight: bold">Event Driven</li>
+              <li class="fragment">
+                <span style="display: block">
+                  Fallbacks to a supported transport
+                </span>
+                <ul style="font-size: 25px; display: inline-block;">
+                  <li class="fragment">WebSocket</li>
+                  <li class="fragment">Adobe® Flash® Socket</li>
+                  <li class="fragment">AJAX long polling</li>
+                </ul>
+                <ul style="font-size: 25px; display: inline-block;">
+                  <li class="fragment">AJAX multipart streaming</li>
+                  <li class="fragment">Forever iframe</li>
+                  <li class="fragment">JSONP Polling</li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>Events</h2>
+            <ul>
+              <li class="fragment" style="font-family: monospace">connect</li>
+              <li class="fragment" style="font-family: monospace">message</li>
+              <li class="fragment" style="font-family: monospace">disconnect</li>
+              <li class="fragment">any custom event</li>
+            </ul>
+          </section>
+          <section>
+            <h2>How to</h2>
+            <pre><code contenteditable class="html" style="font-size: 14px;">
+&lt;script src=&quot;/socket.io/socket.io.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+  var socket = io.connect('http://mysocketioendpoint.com');
+  socket.on('my event', function (data) {
+    console.log(data);
+    socket.emit('my other event', { my: 'data' });
+  });
+&lt;/script&gt;
+              </code></pre>
+          </section>
+        </section>
+      </div>
+
+      <!-- The navigational controls UI -->
+      <aside class="controls">
+        <a class="left" href="#">&#x25C4;</a>
+        <a class="right" href="#">&#x25BA;</a>
+        <a class="up" href="#">&#x25B2;</a>
+        <a class="down" href="#">&#x25BC;</a>
+      </aside>
+
+      <!-- Presentation progress bar -->
+      <div class="progress"><span></span></div>
+      
+    </div>
+
+    <script src="reveal.js/lib/js/head.min.js"></script>
+    <script>
+      // Scripts that should be loaded before initializing
+      var scripts = [];
+
+      scripts.push('jQuery/jquery-1.8.0.js');
+      scripts.push('typist/jquery.typist.js');
+
+      // If the browser doesn't support classList, load a polyfill
+      if( !document.body.classList ) {
+        scripts.push('reveal.js/lib/js/classList.js');
+      }
+
+      scripts.push('reveal.js/js/reveal.js');
+
+      // Load the scripts and, when completed, initialize reveal.js
+      head.js.apply(null, scripts.concat([function() {
+
+        Reveal.addEventListener( 'slidechanged', function( event ) {
+          var fn = $(event.currentSlide).data('trigger');
+          if (window[fn])
+            window[fn]();
+        } );
+
+        Reveal.initialize({
+          controls: false,
+          progress: true,
+          history: true,
+          
+          theme: Reveal.getQueryHash().theme || 'beige', // default/neon/beige
+          transition: Reveal.getQueryHash().transition || 'concave' // default/cube/page/concave/linear(2d)
+        });
+      }]));
+      
+      // Load highlight.js for syntax highlighting of code samples
+      head.js('reveal.js/lib/js/highlight.js', function() { 
+        hljs.initHighlightingOnLoad(); 
+      });
+    </script>
+  </body>
+</html>
