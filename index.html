@@ -134,7 +134,7 @@
           <section>
             <h3>Workflow</h3>
             <img src="img/data_wf.png" alt="Data workflow in a Backbone.JS application">
-            <p>From "The anatomy of Backbone JS" course slides, on <a href="http://www.codeschool.com">codeschool</a></p>
+            <p>From "The anatomy of Backbone JS" course slides, on <a target="blank" href="http://www.codeschool.com">codeschool</a></p>
           </section>
           <section>
             <h3>Fast facts</h3>
@@ -143,6 +143,7 @@
               <li>Models to represent data</li>
               <li>Views to hook up models to the DOM</li>
               <li>Routers provide client-side navigation, great for single page apps</li>
+              <li>Depends on <a target="_blank" href="http://underscorejs.org/">Underscore.js</a> and <a href="http://jquery.com/" target="_blank">jQuery</a></li>
             </ul>
           </section>
           <section>
@@ -159,6 +160,7 @@
           </section>
         </section>
 
+        
 
         <!-- zombie dice! -->
         <section>
@@ -466,7 +468,7 @@
                 </tr>
               </tbody>
             </table>
-            <a href="http://documentcloud.github.com/backbone/#Collection-Underscore-Methods">
+            <a target="blank" href="http://documentcloud.github.com/backbone/#Collection-Underscore-Methods">
               http://documentcloud.github.com/backbone/#Collection-Underscore-Methods
             </a>
           </section>
@@ -475,7 +477,7 @@
           </section>
           <section>
             <h2>There's an API!</h2>
-            <h3><a href="http://zd.r42.in">http://zd.r42.in</a>
+            <h3><a target="blank" href="https://github.com/R42/zd-server">http://zd.r42.in</a>
               <h2>What does it do?</h2>
           </section>
           <section>
@@ -584,7 +586,7 @@
             <h2>We can think of some models</h2>
             <h3>Let's implement them?</h3>
             <br/>
-            <h3>https://github.com/R42/zd-server/wiki/API</h3>
+            <h3><a target="_blank" href="https://github.com/R42/zd-server/wiki/API">https://github.com/R42/zd-server/wiki/API</a></h3>
           </section>
         </section>
 
@@ -644,7 +646,7 @@
             <h3>Zombies don't talk...</h3>
             <pre><code contenteditable class="javascript" style="font-size: 14px;">
   var Zombie = Backbone.Model.extend({
-    urlRoot : 'http://my.api.com/zombies'
+    urlRoot : 'http://my.api.com/zombies',
 
     initialize: function(){
       this.on('sync', this.sync, this);
@@ -660,7 +662,7 @@
           <section>
             <h2>What kind of sorcery is this?</h2>
             <h1 class="fragment" style="margin-top: 140px;">
-              <a href="http://backbonejs.org/docs/backbone.html#section-162">
+              <a target="blank" href="http://backbonejs.org/docs/backbone.html#section-162">
                 <span data-title="Backbone.Sync">Backbone.Sync</span>
               </a>
             </h1>
@@ -825,12 +827,12 @@
           </section>
           <section>
             <img src="img/mvc_events_wf.png" alt="The events workflow in Backbone.JS">
-            <p>From "The anatomy of Backbone JS" course slides, on <a href="http://www.codeschool.com">codeschool</a></p>
+            <p>From "The anatomy of Backbone JS" course slides, on <a target="blank" href="http://www.codeschool.com">codeschool</a></p>
           </section>
           <section>
             <h3>Collections + Views = Collection Views</h3>
             <img src="img/collectionview.png" alt="Collection View" />
-            <p>From "The anatomy of Backbone JS" course slides, on <a href="http://www.codeschool.com">codeschool</a></p>
+            <p>From "The anatomy of Backbone JS" course slides, on <a target="blank" href="http://www.codeschool.com">codeschool</a></p>
             <h4>A collection view doesn't render any HTML. It delegates that to the model views</h4>
           </section>
           <section>
